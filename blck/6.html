@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #141414;
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px;
+      text-align: left;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .menu {
+      cursor: pointer;
+      font-size: 30px;
+      padding: 10px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .main-content {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s ease;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background-color: transparent;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .main-content.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .movie-card {
+      background-color: black;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      width: 150px;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #e50914;
+    }
+
+    .movie-details {
+      padding: 10px;
+    }
+
+    h3,
+    p {
+      margin: 0;
+    }
+
+    #info-container {
+      margin-top: 150px; 
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 0 17px rgba(0, 0, 0, 0.3);
+    }
+
+    p::before {
+      content: '➤';
+      color: #ff0000;
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    footer {
+      background-color: #111;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  <link rel='website icon' type="png " href="SDG-icon-IT--13.svg">
+  <title>ARTICOLO 13 </title>
+</head>
+<body>
+  <header>
+    <div class="menu" onclick="toggleDropdown()">
+      ≡ &nbsp ARTICOLO 13
+    </div>
+  </header>
+
+  <div class="container main-content">
+    <div class="movie-card" onclick="navigateToPage('index.html')">
+      <img src="home.jpeg" alt="error 1">
+      <div class="movie-details">
+        <h3>Home  </h3>
+      </div>
+    </div>
+    <div class="movie-card" onclick="navigateToPage('3.html')">
+      <img src=download.png alt="error 2">
+      <div class="movie-details">
+        <h4> Agenda 2030</h4>  
+      </div>
+    </div>
+    <div class="movie-card" onclick="navigateToPage('4.html')">
+      <img src=bkch.png alt="error 2">
+      <div class="movie-details">
+        <h4>La blockchain</h4>
+      </div>
+    </div>
+    <div class="movie-card" onclick="navigateToPage('5.html')">
+      <img src=SDG-icon-IT--07.svg alt="error 2">
+      <div class="movie-details">
+        <h4>Aritcolo 7 </h4>
+      </div>
+      </div>
+      <div class="movie-card" onclick="navigateToPage('7.html')">
+        <img src=clcmp.jpeg alt="error 2">
+        <div class="movie-details">
+          <h4>Cloud computing </h4>
+        </div>
+      </div>
+    <div class="movie-card" onclick="navigateToPage('8.html')">
+    <img src=aaa.png alt="error 2">
+    <div class="movie-details">
+      <h4> Server Farm </h4>
+    </div>
+    </div>
+    <div class="movie-card" onclick="navigateToPage('9.html')">
+    <img src=spcm.webp alt="error">
+    <div class="movie-details">
+      <h4> Super-computer </h4>
+    </div>
+  </div>
+   <div class="movie-card" onclick="navigateToPage('10.html')">
+      <img src=Reti-informatiche-concept-800x469.webp alt="error 2">
+      <div class="movie-details">
+        <h4>RETE/NETWORK </h4>
+      </div>
+     
+    </div>
+    <div class="movie-card" onclick="navigateToPage('11.html')">
+      <img src=2.png alt="error 2">
+      <div class="movie-details">
+        <h4>Consumo delle blockchain</h4>
+      </div>
+    </div>
+    <div class="movie-card" onclick="navigateToPage('12.html')">
+      <img src=Reti-informatiche-concept-800x469.webp alt="error 2">
+      <div class="movie-details">
+        <h4>RIFLESSIONI </h4>
+      </div>
+      </div>
+  </div>
+  <div id="info-container">
+  </div>
+  <p><strong>COS'E'E A COSA MIRA : </strong><BR>Il target 13 si concentra sull'azione per affrontare il cambiamento climatico. Questo implica l'implementazione di politiche e pratiche volte a ridurre le emissioni di gas serra, l'adattarsi ai cambiamenti climatici già in corso e promuovere la resilienza ai loro impatti. Ciò include investimenti in energie pulite, trasporti sostenibili, agricoltura resiliente e protezione degli ecosistemi. L'obiettivo è di limitare l'aumento della temperatura globale a livelli accettabili per prevenire catastrofici impatti ambientali ed economici.</p>
+  
+  <footer>
+    <marquee>&copy; BUCIGNO-D'AVINO-BRUGIATI</marquee>
+  </footer>
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.querySelector('.main-content');
+      dropdown.classList.toggle("active");
+    }
+
+    function navigateToPage(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

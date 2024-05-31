@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Principale</title>
+  <style>
+    .card {
+      width: 164px;
+      height: 276px;
+      background: rgb(0, 0, 0);
+      border: 3px solid rgb(17, 4, 94);
+      border-radius: 15px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      transition: all 1s ease;
+      color: antiquewhite;
+    }
+    .card::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      bottom: 10px;
+      right: 77px;
+      border-radius: 50%;
+      background-color: rgb(17, 4, 94);
+    }
+
+    .card__date {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+    }
+
+    .time {
+      font-size: 2em;
+    }
+
+    .popup {
+      background-color: #444746;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      font-size: .8em;
+      padding: 3px;
+    }
+
+    .popup .title {
+      font-size: 9px;
+      color: #9cbde2;
+    }
+
+    .card__date , .popup {
+      opacity: 0;
+      transition: all .5s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0px 0px 10px 10px #289FED;
+    }
+
+    .card:hover .card__date,
+    .card:hover .popup {
+      opacity: 1;
+    }
+    </style>
+  <style>
+    main {
+      padding: 20px;
+      margin-top: 20px; 
+    }
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #141414;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #000;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .menu {
+      cursor: pointer;
+      font-size: 30px;
+      padding: 10px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .menu.active {
+      box-shadow: 0 0 10px red;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .main-content {
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s ease;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background-color: transparent;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .main-content.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .movie-card {
+      background-color: black;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      width: 150px;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #e50914;
+    }
+
+    .movie-details {
+      padding: 10px;
+    }
+
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="menu" onclick="toggleDropdown()">
+      ≡ HOME
+    </div>
+  </header>
+
+  <div class="container main-content">
+    <div class="movie-card" onclick="navigateToPage('4.html')">
+        <img src="bkch.png" alt="Movie 1">
+        <div class="movie-details">
+          <h3>BLOCKCHAIN   </h3>
+
+        </div>
+      </div>
+      <div class="movie-card" onclick="navigateToPage('3.html')">
+        <img src=download.png alt="Movie 2">
+        <div class="movie-details">
+          <h4>Agenda 2030</h4>  
+        </div>
+      </div>
+      <div class="movie-card" onclick="navigateToPage('5.html')">
+        <img src=SDG-icon-IT--07.svg alt="Movie 2">
+        <div class="movie-details">
+          <h4>Articolo 7</h4>
+        </div>
+      </div>
+      <div class="movie-card" onclick="navigateToPage('6.html')">
+        <img src=SDG-icon-IT--13.svg alt="Movie 2">
+        <div class="movie-details">
+          <h4>Articolo 13 </h4>
+        </div>
+        </div>
+        <div class="movie-card" onclick="navigateToPage('7.html')">
+          <img src=clcmp.jpeg alt="Movie 2">
+          <div class="movie-details">
+            <h4>Cloud computing </h4>
+          </div>
+        </div>
+      <div class="movie-card" onclick="navigateToPage('8.html')">
+      <img src=aaa.png alt="Movie 2">
+      <div class="movie-details">
+        <h4> Server Farm </h4>
+      </div>
+      </div>
+      <div class="movie-card" onclick="navigateToPage('9.html')">
+      <img src=spcm.webp alt="Movie 2">
+      <div class="movie-details">
+        <h4> Super-computer </h4>
+      </div>
+    </div>
+    
+    <div class="movie-card" onclick="navigateToPage('10.html')">
+      <img src=Reti-informatiche-concept-800x469.webp alt="error 2">
+      <div class="movie-details">
+        <h4>RETE/NETWORK </h4>
+      </div>
+      </div>
+    <div class="movie-card" onclick="navigateToPage('11.html')">
+      <img src=2.png alt="error 2">
+      <div class="movie-details">
+        <h4>Consumo delle blockchain</h4>
+      </div>
+    </div>
+    <div class="movie-card" onclick="navigateToPage('12.html')">
+      <img src=Reti-informatiche-concept-800x469.webp alt="error 2">
+      <div class="movie-details">
+        <h4>RIFLESSIONI </h4>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <main>
+    <div class="card">
+
+      <div class="card__date">
+        <span class="time">12:34</span>
+        <span class="date">Lun 27/03/2024</span>
+      </div>
+        <div class="popup">
+            <p class="title">ANDREA BUCIGNO</p>
+            <p>Usa il menu a tendina per spostarti tra le pagine</p>
+        </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <marquee> &copy; BUCIGNO-D'AVINO-BRUGIATI</marquee>
+
+        </footer>
+        <script>
+          function toggleDropdown() {
+            var menu = document.querySelector('.menu');
+            var dropdown = document.querySelector('.main-content');
+            menu.classList.toggle("active");
+            dropdown.classList.toggle("active");
+          }
+
+          function navigateToPage(page) {
+            window.location.href = page;
+          }
+        </script>
+      </body>
+      </html>
